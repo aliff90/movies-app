@@ -1,0 +1,43 @@
+label {
+    padding: 5px;
+    background: white;
+    color: red;
+    border: 1px solid red;
+    height: 50%;
+    border-radius: 50%;
+    transform: translateY(60px);
+}
+
+img {
+    width: 200px;
+}
+
+.modalBackground {
+    width: 100vw;
+    height: 100vh;
+    background: grey;
+}
+
+/* #root {
+    display: fixed;
+    z-index: -1;
+}
+#portal {
+    display: block;
+    z-index: 100;
+} */
+
+.modalContainer {
+    display: fixed;
+    background-color: white;
+}
+
+.modalBackground {
+    display: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    z-index: 1000;
+}
