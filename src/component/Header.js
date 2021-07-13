@@ -11,11 +11,18 @@ const Header = () => {
         history.push("/");
     }
     return (
-        <div>
-            <Link to="/dashboard">Home</Link>
-            <Link to="/add">Add</Link>
-            <button onClick={logout}>Logout</button>
-        </div>
+        <header>
+           <div className="header__container">
+               <div className="header__content">
+                   <Link to="/dashboard" className="header__link header__link--logo">EpiTracker</Link>
+                   <div className="header__links">
+                      {/* <Link to="/dashboard" className="header__link">Home</Link> */}
+                      {/* <Link to="/add" className="header__link">Add</Link> */}
+                      <button onClick={logout} className="btn btn--link">Logout</button>
+                   </div>
+               </div>
+           </div>
+        </header>
     )
 }
 

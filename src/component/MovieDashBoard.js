@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useAuth } from "./contexts/AuthContext";
 import database from "./firebase"
 import MovieList from "./MovieList";
@@ -12,18 +13,21 @@ const MovieDashBoard = () => {
             const movies = []
             snap.forEach(snap => {
                 movies.push(snap.val())
-                console.log("hi")
             })
             setMovies(movies)
-            console.log("hey")
         })
     }, [])
 
     return (
         <div>
             <Header />
-            <div>
-                {movies.length === 0 ? (<div>No Movies</div>) : movies.map((movie) => {
+            <div className="page-title">
+                {/* <h1 >Shows</h1> */}
+                <div className="shows-length">You are watching <b>{movies.length}</b> show(s)  currently.</div>
+                <Link to="/add" className="btn header__add" >Add</Link>
+            </div>
+            <div className="dashboard"> 
+                {movies.length === 0 ? (<div className="blank-title">You are not watching any shows currently. </div>) : movies.map((movie) => {
                     return <MovieList {...movie} key={movie.id} />
             })}
             </div>

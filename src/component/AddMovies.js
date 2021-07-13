@@ -5,12 +5,10 @@ import { useAuth } from "./contexts/AuthContext";
 import Header from "./Header";
 
 const AddMovies = () => {
-    const [movies, setMovies] = useState({title : "",  eps : "", current: 0, url: ""})
+    const [movies, setMovies] = useState({title : "",  eps : 0  , current: 0, url: ""})
     const [img, setImg] = useState("");
     const [error, setError] = useState("")
     const { currentUser } = useAuth();
-    console.log(currentUser)
-    // const [url, setUrl] = useState("")
     const history = useHistory();
 
     const changeImageHandler = (e) => {
@@ -22,7 +20,7 @@ const AddMovies = () => {
             setImg(selectImg);
             setError(null)
         } else {
-            setError("Please select only jpeg or png files only");
+            setError("*Please select only jpeg or png files only");
             document.getElementById("inputFile").value = "";
         }
     };
@@ -33,13 +31,19 @@ const AddMovies = () => {
     };
 
     const changeEps = (e) => {
-        const eps = e.target.value;
-        setMovies({...movies, eps});
+        let eps = e.target.value;
+        if (!eps || eps.match(/^[0-9\b]+$/)) {
+            eps=parseInt(eps) || 0;
+            setMovies({...movies, eps});
+        }
     };
 
     const changeCurrent = (e) => {
-        const current = e.target.value;
-        setMovies({...movies, current});
+        let current = e.target.value;
+        if (!current || current.match(/^[0-9\b]+$/)) {
+            current=parseInt(current) || 0;
+            setMovies({...movies, current});
+        }
     };
     
     const onUpload = () => {
@@ -48,10 +52,11 @@ const AddMovies = () => {
             console.log("upload success")
         },
         (error) => {
-            console.log("error")
+            setError("There is a problem when uploading. Please try and upload again")
         }, async () => {
             const url = await storageRef.getDownloadURL();
-            // setUrl(url)
+            const eps = parseInt(movies.eps)
+            const current = parseInt(movies.current)
             database.ref(`users/${currentUser}/movies`).push(movies).then((ref) => {
                 setMovies({...movies, id: ref.key})
                 const key = ref.key
@@ -70,17 +75,28 @@ const AddMovies = () => {
     return (
         <div>
         <Header />
-          <form onSubmit={addMovies}>
-            <input type="file" onChange={changeImageHandler} id="inputFile"/>
-            {error && <div>{error}</div>}
-            <h3>Title</h3>
-            <input type="text" value={movies.title} onChange={changeTitle} />  
-            <h3>Episodes</h3>
-            <input type="text" value={movies.eps} onChange={changeEps} />
-            <h3>Currently Watching</h3>
-            <input type="text" value={movies.current} onChange={changeCurrent} />  
-            <button>Add</button>
-          </form>  
+        <h1 className="page-title">Add Show</h1>
+          <div className="add-container">
+                <form onSubmit={addMovies}>
+                    <div className="inputFile">
+                        <input type="file" onChange={changeImageHandler} id="inputFile"/>
+                        {error && <div>{error}</div>}
+                    </div>
+                    <div className="add-item__form">
+                        <h3>Title:</h3>
+                        <input type="text" value={movies.title} onChange={changeTitle} className="add-item__input" />
+                    </div>
+                    <div className="add-item__form">
+                        <h3>Episodes:</h3>
+                        <input type="text" pattern="[0-9]*" value={movies.eps} onChange={changeEps}  className="add-item__input" />
+                    </div>
+                    <div className="add-item__form">
+                        <h3>Current Episode:</h3>
+                        <input type="text" value={movies.current} onChange={changeCurrent} className="add-item__input" />
+                    </div>
+                    <button className="btn btn--add">Add Show</button>
+                </form>  
+            </div>
       </div>
     )
 }

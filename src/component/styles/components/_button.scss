@@ -1,0 +1,31 @@
+.btn {
+    border: none;
+    padding: $s-size;
+    border-radius: 2px;
+    background: #3315BB;
+    color: white;
+    font-size: $m-size;
+    font-weight: 700;
+}
+
+.btn--link {
+    background: none;
+    font-size: $m-size;
+}
+
+.btn--increase {
+    width: 100%;
+    font-size: $s-size;
+}
+
+.btn--edit, .btn--add {
+    margin-top: $s-size;
+    font-size: $s-size;
+}
+
+.btn--red {
+    margin-top: $s-size;
+    margin-left: $s-size;
+    font-size: $s-size;
+    background: #e60000;
+}

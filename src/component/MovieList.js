@@ -33,25 +33,28 @@ const MovieList = ({id, title = "N/A", eps="0", url, current}) => {
     const openModal = {id, setIsOpen, current, increaseCount};
 
     return (
-        <div>
-            <Link to={{
-                pathname:`/edit/${id}`,
-                state: {
-                    id, title, eps, url, current: count
-                }
+        <div className="list-container">
+            <div className="list-content">
+                <Link  className="list-item" to={{
+                    pathname:`/edit/${id}`,
+                    state: {
+                        id, title, eps, url, current: count
+                    }
                 }}>
-                { url.indexOf("undefined") > -1 || !url ? <img src={noImageLogo} alt="" /> : <img src={url} alt="" />}
-                <h1>Title</h1>
-                <p>{title ? title : "N/A"}</p>
-            </Link>
-            <h1>Total Episodes</h1>
-            <p>{eps ? eps : "N/A"}</p>
-            <div>
-                <p>Currently Watching</p>
-                <p>{count}</p>
-                <button onClick={open}>Next Episode</button>
+                
+               {/* <h1>Title</h1> */}
+               <h2 className="list-item__title">{title ? title : "N/A"}</h2>
+               <div className="list-item__image">
+               { url.indexOf("undefined") > -1 || !url ? <img src={noImageLogo} alt="" /> : <img src={url} alt="" />}
+               </div>
+               <h3 className="list-item__heading">Total Episodes</h3>
+               <p className="list-item__count">{eps ? eps : "N/A"}</p>
+                <h3 className="list-item__heading">Currently Watching</h3>
+                <p className="list-item__count">{count}</p>
+                </Link>
+                <button onClick={open} className="btn btn--increase">Next Episode</button>
             </div>
-            { isOpen && <OptionModal openModal={openModal} /> }                
+               { isOpen && <OptionModal openModal={openModal} /> }
         </div>
     )
 }

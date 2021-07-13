@@ -1,1 +1,10 @@
-@import "./modal"
+@import "./base/base";
+@import "./base/settings.scss";
+@import "./components/login";
+@import "./components/button";
+@import "./components/header";
+@import "./components/MovieList";
+@import "./components/dashboard";
+@import "./components/editMovies";
+@import "./components/addMovies";
+@import "./components/modal";

@@ -1,0 +1,25 @@
+.dashboard {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__add {
+    text-decoration: none;
+    font-size: $m-size;
+}
+
+.blank-title {
+    margin: 10rem;
+    font-size: $xl-size;
+    color: $purpleish;
+}
+
+.shows-length {
+    text-align: center;
+    background: darken($off-white, 3%);
+    margin: $s-size 0 $l-size 0;
+    font-size: $l-size;
+}

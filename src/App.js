@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AddMovies from "./component/AddMovies"
 import MovieDashBoard from "./component/MovieDashBoard"
 import EditMovie from "./component/EditMovie";
-import "./component/style.css"
 import Login from "./component/Login";
 import { AuthProvider } from "./component/contexts/AuthContext";
 import PrivateRoute from "./component/PrivateRoute"
-// import "./component/styles/styles.scss"
+// import "./component/style.css"
+import "./component/styles/styles.scss"
 
 const App = () => {
   return (

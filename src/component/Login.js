@@ -13,9 +13,12 @@ const Login =  () => {
     }
 
     return (
-        <div>
-            <h1>Login Now!</h1>
-            <button onClick={login}>Login</button>
+        <div className="login-container">
+            <div className="login-container__content">
+                <h1 className="login-container__title">Show Tracker</h1>
+                <p className="login-container__description">Keep track of your shows now!</p>
+                <button className="btn" onClick={login}>Login with Google!</button>
+            </div>
         </div>
     )
 }

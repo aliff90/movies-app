@@ -1,0 +1,44 @@
+.list-container {
+    width: 20rem;
+    border: 1px solid darken($off-white, 7%);
+    margin: $s-size;
+}
+
+.list-content {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    line-height: 2;
+    border: 1px solid darken($off-white, 7%);
+}
+
+.page-title {
+    background: $off-white;
+    padding: $s-size;
+    text-align: center;
+}
+
+.list-item {
+    text-decoration: none;
+    word-wrap: break-word;
+}
+
+.list-item__title {
+    font-size: $l-size;
+    color: $purpleish;
+}
+
+.list-content {
+    width: 100%;
+}
+
+.list-item__heading {
+    background: darken($off-white, 3%);
+    width: 100%;
+}
+
+.list-item__count {
+    background: white;
+    width: 100%;
+    font-weight: 800;
+}
