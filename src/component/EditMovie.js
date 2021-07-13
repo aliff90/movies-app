@@ -125,11 +125,11 @@ const EditMovie = () => {
                         <input type="text" value={movies.title} onChange={changeTitle} />
                     </div>
                     <div className="edit-item__form">
-                        <h3>Episodes:</h3>
+                        <h3>Total Episodes:</h3>
                         <input type="text" pattern="[0-9]*" value={movies.eps} onChange={changeEps} />
                     </div>
                     <div className="edit-item__form">
-                        <h3>Current Episode:</h3>
+                        <h3>Currently At Episode:</h3>
                         <input type="text" value={movies.current} onChange={changeCurrent} />
                     </div>
                     <div className="edit-item__btn">

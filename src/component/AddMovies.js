@@ -80,6 +80,7 @@ const AddMovies = () => {
                 <form onSubmit={addMovies}>
                     <div className="inputFile">
                         <input type="file" onChange={changeImageHandler} id="inputFile"/>
+                        <p>Add image here</p>
                         {error && <div>{error}</div>}
                     </div>
                     <div className="add-item__form">
@@ -87,11 +88,11 @@ const AddMovies = () => {
                         <input type="text" value={movies.title} onChange={changeTitle} className="add-item__input" />
                     </div>
                     <div className="add-item__form">
-                        <h3>Episodes:</h3>
+                        <h3>Total Episodes:</h3>
                         <input type="text" pattern="[0-9]*" value={movies.eps} onChange={changeEps}  className="add-item__input" />
                     </div>
                     <div className="add-item__form">
-                        <h3>Current Episode:</h3>
+                        <h3>Currently at episode:</h3>
                         <input type="text" value={movies.current} onChange={changeCurrent} className="add-item__input" />
                     </div>
                     <button className="btn btn--add">Add Show</button>
