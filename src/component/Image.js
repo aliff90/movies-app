@@ -10,7 +10,6 @@ const Image = (props) => {
     const changeImageHandler = (e) => {
         const selectImg = e.target.files[0];
         if (selectImg) {
-            // setImg(selectImg);
             const img = selectImg;
             const storageRef = storage.ref(`images/${img.name}`)
             storageRef.put(img).on("state_chaneds", snap => {
