@@ -13,6 +13,7 @@ const config = {
   appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
+// console.log(process.env.REACT_APP_FIREBASE_DATABASE_URL)
 // const config = {
 //     apiKey: "AIzaSyAygxn1efRRIy_0Nbzyq33L3HiG_U_7Et0",
 //     authDomain: "movie-app-5aebc.firebaseapp.com",
