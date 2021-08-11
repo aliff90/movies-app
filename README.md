@@ -4,7 +4,7 @@ This project is created using create-react-app. This is my first personal mini p
 
 ## WHAT DOES IT DO
 
-This simple web app is to keep trak of the shows that people watch. Often people may forget what episode did they stopped at. This can help them keep track of it.
+This simple web app is to keep track of the shows that people watch. Often people may forget what episode did they stopped at. This can help them keep track of it.
 
 ## Functionality
 
