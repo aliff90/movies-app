@@ -1,6 +1,6 @@
 ## SUMMARY
 
-This project is created using create-react-app. This is my first project after completing ReactJS course on Udemy.
+This project is created using create-react-app. This is my first personal mini project after completing ReactJS course on Udemy.
 
 ## WHAT DOES IT DO
 
